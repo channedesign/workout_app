@@ -41,6 +41,7 @@ group :development, :test do
   gem 'foreman'
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
