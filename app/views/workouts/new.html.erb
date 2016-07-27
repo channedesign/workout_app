@@ -1,0 +1,7 @@
+<%= link_to 'Back', user_workouts_path(current_user) %>
+<%= simple_form_for([current_user, @workout], html: { class: 'form-horizontal' }) do |f| %>
+	<%= f.input :duration %>
+	<%= f.input :workout_details %>
+	<%= f.input :activity_date,as: :text %>
+	<%= f.button :submit %>
+<% end %>

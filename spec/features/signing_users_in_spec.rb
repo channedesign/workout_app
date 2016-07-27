@@ -4,6 +4,7 @@ RSpec.describe 'Signing a User In', type: :feature do
 		
 	before do
 		@bob = User.create(email: 'bob@me.com', password: 'Password')
+		login_as nil
 	end
 
 	scenario 'with valid credentials' do
