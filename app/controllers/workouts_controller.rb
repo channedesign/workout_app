@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
 
 
 	def index
-		
+		@workouts = current_user.workouts.last_7_days
 	end
 
 	def show
