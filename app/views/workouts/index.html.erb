@@ -35,3 +35,15 @@
 	<%= link_to 'New Workout', new_user_workout_path %>
 	<%= content_tag :div, '', id: 'workout-chart', data: { workouts: @workouts } %>
 </div>
+
+<div class="col-md-4">
+	<h1 class='text-center'>My Friends</h1>
+	<% @friends.each do |friend| %>
+		<div class='col-md-6 col-md-offset-3'>
+			<%= link_to friend.full_name, friendship_path(current_user.current_friendship(friend)) %>
+		</div>
+		<div class='col-md-3'>
+			<%= link_to 'Unfollow', friendship_path(current_user.current_friendship(friend)), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+		</div>
+	<% end %>
+</div>
