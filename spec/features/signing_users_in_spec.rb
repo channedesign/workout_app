@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Signing a User In', type: :feature do
 		
 	before do
-		@bob = User.create(email: 'bob@me.com', password: 'Password')
+		@bob = User.create(first_name: 'Bob', last_name: 'Me', email: 'bob@me.com', password: 'Password')
 		login_as nil
 	end
 
