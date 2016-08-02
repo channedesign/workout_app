@@ -1,7 +1,8 @@
 <div class="row">
 	<% @athletes.each do |athlete| %>
-		<div class="col-md-10 col-md-offset-2 well">
+		<div class="col-md-6 col-md-offset-3 well">
 			<%= athlete.full_name %>
+			<%= link_to 'Follow', friendships_path(friend_id: athlete.id), method: :post, class: "btn btn-primary pull-right" unless current_user.follows_or_same?(athlete) %>
 		</div>
 	<% end %>
 </div>
